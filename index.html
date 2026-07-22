@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PersianGuards | نگهبانان ایران‌زمین</title>
+<meta name="description" content="کامیونیتی گیمینگ PersianGuards - سرور تیم‌اسپیک و دیسکورد با روحیه‌ی تخت جمشید و کوروش بزرگ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Cinzel:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= AMBIENT BACKGROUND LAYERS ================= -->
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__stars"></div>
+  <div class="ambient__dust" id="dustLayer"></div>
+  <svg class="ambient__faravahar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  </svg>
+</div>
+
+<!-- shared SVG defs (symbols reused across page) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="faravahar-symbol" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M100 60 L100 140 M70 100 L130 100" stroke="currentColor" stroke-width="2" fill="none"/>
+      <path d="M40 100 C 10 70, 10 130, 40 100 C 20 60, 60 40, 40 100" fill="none" stroke="currentColor" stroke-width="2"/>
+      <path d="M160 100 C 190 70, 190 130, 160 100 C 180 60, 140 40, 160 100" fill="none" stroke="currentColor" stroke-width="2"/>
+      <circle cx="100" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+      <circle cx="100" cy="100" r="90" fill="none" stroke="currentColor" stroke-width="0.7" opacity="0.3"/>
+    </symbol>
+    <symbol id="rosette" viewBox="0 0 100 100">
+      <g fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle cx="50" cy="50" r="46"/>
+        <circle cx="50" cy="50" r="6"/>
+        <g id="petals"></g>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="siteNav">
+  <div class="nav__inner">
+    <a href="#top" class="nav__brand">
+      <svg class="nav__brand-icon" viewBox="0 0 40 40"><use href="#faravahar-symbol"/></svg>
+      <span class="nav__brand-text">Persian<em>Guards</em></span>
+    </a>
+    <nav class="nav__links">
+      <a href="#servers">سرورها</a>
+      <a href="#about">درباره ما</a>
+      <a href="#features">امکانات</a>
+    </nav>
+    <a href="ts3server://PersianGuards.ir" class="nav__cta">اتصال به تیم‌اسپیک</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="top" class="hero">
+  <div class="hero__sky"></div>
+
+  <!-- monumental gate signature element -->
+  <svg class="hero__gate" viewBox="0 0 1200 640" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- ground haze -->
+    <ellipse cx="600" cy="600" rx="700" ry="60" fill="url(#groundGlow)"/>
+    <defs>
+      <radialGradient id="groundGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#c9a15c" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#c9a15c" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="colGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e8c07d"/>
+        <stop offset="100%" stop-color="#7a5a30"/>
+      </linearGradient>
+    </defs>
+
+    <!-- far background columns (Apadana rows) -->
+    <g class="gate-bg-columns" fill="none" stroke="#7a5a30" stroke-width="3" opacity="0.35"></g>
+
+    <!-- left great column with emblem -->
+    <g class="gate-col gate-col--left">
+      <path class="draw" d="M120 600 L120 160" stroke="url(#colGrad)" stroke-width="18" fill="none"/>
+      <path class="draw" d="M90 600 L150 600" stroke="#c9a15c" stroke-width="10" fill="none"/>
+
+      <!-- guardian emblem -->
+      <image class="draw-gate-emblem" href="R.png" x="78" y="168" width="280" height="180" preserveAspectRatio="xMidYMid meet"/>
+      
+    </g>
+
+    <!-- right great column with emblem -->
+    <g class="gate-col gate-col--right">
+      <path class="draw" d="M1080 600 L1080 160" stroke="url(#colGrad)" stroke-width="18" fill="none"/>
+      <path class="draw" d="M1050 600 L1110 600" stroke="#c9a15c" stroke-width="10" fill="none"/>
+   
+      <image class="draw-gate-emblem" href="L.png" x="842" y="168" width="280" height="180" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+
+    <!-- inner flanking columns -->
+    <g class="gate-col gate-col--in-left" opacity="0.8">
+      <path class="draw" d="M330 600 L330 240" stroke="url(#colGrad)" stroke-width="12" fill="none"/>
+      <path class="draw" d="M308 600 L352 600" stroke="#c9a15c" stroke-width="7" fill="none"/>
+    </g>
+    <g class="gate-col gate-col--in-right" opacity="0.8">
+      <path class="draw" d="M870 600 L870 240" stroke="url(#colGrad)" stroke-width="12" fill="none"/>
+      <path class="draw" d="M848 600 L892 600" stroke="#c9a15c" stroke-width="7" fill="none"/>
+    </g>
+
+    <!-- winged sun crest over gate -->
+    <g class="gate-crest">
+      <image class="gate-crest" href="Logo.png" width="230" height="230" x="490" y="5" preserveAspectRatio="xMidYMid meet"/>
+    </g>
+  </svg>
+
+  <div class="hero__content">
+    <h1 class="hero__title reveal">
+
+      <span class="hero__title-fa">نگهبانان پارسی</span>
+    </h1>
+    <p class="hero__desc reveal">
+      کامیونیتی‌ای برخاسته از دل تخت جمشید و آرامگاه کوروش بزرگ؛ جایی که دوستی‌ها مثل ستون‌های آپادانا استوار می‌مانند.
+    </p>
+
+    <div class="hero__actions reveal">
+      <a href="ts3server://PersianGuards.ir" class="btn btn--primary btn--ts" id="tsHeroBtn">
+        <span class="btn__glow"></span>
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5Zm7 8a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V19H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 10Z"/></svg>
+        <span class="btn__text">
+          <strong>ورود به تیم‌اسپیک</strong>
+          <small>PersianGuards.ir</small>
+        </span>
+      </a>
+      <a href="https://discord.gg/5uGH7yHP3v" target="_blank" rel="noopener" class="btn btn--secondary">
+        <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 5.3A17.5 17.5 0 0 0 15.9 4l-.2.4c1.7.5 2.6 1.1 3.6 1.9-1.6-.8-3.1-1.3-4.6-1.5-1.4-.2-2.8-.2-4.2 0-1.5.2-3 .7-4.6 1.5 1-.8 2.1-1.4 3.9-1.9L9.6 4a17.4 17.4 0 0 0-4.4 1.3C2.6 9 1.9 12.6 2.2 16.1a17.7 17.7 0 0 0 5.4 2.7l.7-1.2c-.8-.3-1.5-.6-2.2-1.1.2.1.4.3.6.4 3 1.6 6.4 1.6 9.4 0l.6-.4c-.7.4-1.4.8-2.2 1.1l.7 1.2c1.9-.6 3.8-1.5 5.4-2.7.4-4.1-.6-7.6-2.3-10.8ZM9 14c-.8 0-1.5-.8-1.5-1.7S8.2 10.6 9 10.6s1.5.8 1.5 1.7S9.8 14 9 14Zm6 0c-.8 0-1.5-.8-1.5-1.7s.7-1.7 1.5-1.7 1.5.8 1.5 1.7-.7 1.7-1.5 1.7Z"/></svg>
+        <span class="btn__text"><strong>عضویت در دیسکورد</strong></span>
+      </a>
+    </div>
+
+    <div class="hero__scroll reveal" aria-hidden="true">
+      <span></span>
+      <p>پایین بروید</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CYRUS QUOTE STRIP ================= -->
+<section class="quote-strip">
+  <div class="quote-strip__cuneiform" aria-hidden="true">𒀭𒆠𒅆𒅆</div>
+  <p class="quote-strip__text reveal">
+    «من کوروش، شاه جهان... در حالی‌که به شهر بابل با آرامش وارد شدم» — از منشور کوروش بزرگ
+  </p>
+  <div class="quote-strip__cuneiform" aria-hidden="true">𒀭𒆠𒅆𒅆</div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about">
+  <div class="about__inner">
+    <div class="about__text">
+      <p class="eyebrow reveal">درباره‌ی PersianGuards</p>
+      <h2 class="section-title reveal">میراثی برای امروز، جمعی برای همیشه</h2>
+      <p class="reveal">
+        همان‌طور که تخت جمشید محل گردهمایی نمایندگان اقوام مختلف امپراتوری هخامنشی بود، PersianGuards هم خانه‌ای است برای گیمرهایی که از هر سبک و سلیقه‌ای کنار هم جمع شده‌اند.
+        هدف ما ساختن جامعه‌ای با احترام، نظم و رفاقتی به بلندای ستون‌های آپادانا است.
+      </p>
+      <div class="about__pillars">
+        <div class="pillar reveal">
+          <svg viewBox="0 0 48 48" class="pillar__icon" href="Maghbare.png"><path d="M12 40h24M14 40V14h4v26M30 40V14h4v26M10 14h28l-2-6H12l-2 6Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>استحکام</h3>
+          <p>ساختاری پایدار مثل ستون‌های سنگی آپادانا</p>
+        </div>
+        <div class="pillar reveal">
+          <svg viewBox="0 0 48 48" class="pillar__icon"><circle cx="24" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 40c0-8 5-14 12-14s12 6 12 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>برادری</h3>
+          <p>فرمان کوروش: احترام به همه‌ی اقوام و عقاید</p>
+        </div>
+        <div class="pillar reveal">
+          <svg viewBox="0 0 48 48" class="pillar__icon"><path d="M24 4l4 12h12l-10 8 4 12-10-8-10 8 4-12-10-8h12z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+          <h3>افتخار</h3>
+          <p>هر عضو، سفیری از فرهنگ ایران‌زمین</p>
+        </div>
+      </div>
+    </div>
+    <div class="about__art reveal" aria-hidden="true">
+      <img class="tomb-photo" src="Maghbare.png">
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVERS ================= -->
+<section id="servers" class="servers">
+  <p class="eyebrow reveal center">جایگاه گردهمایی</p>
+  <h2 class="section-title reveal center">سرورهای ما</h2>
+  <p class="section-sub reveal center">ما را در تیم‌اسپیک پیدا کنید — همان‌جا که صدای واقعی جمع طنین‌انداز می‌شود.</p>
+
+  <div class="servers__grid">
+
+    <!-- TeamSpeak — Featured -->
+    <article class="server-card server-card--featured reveal">
+      <div class="server-card__badge">پیشنهاد ویژه</div>
+      <div class="server-card__glow"></div>
+      <svg class="server-card__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5Zm7 8a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V19H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 10Z"/></svg>
+      <h3>تیم‌اسپیک PersianGuards</h3>
+      <p class="server-card__addr">PersianGuards.ir</p>
+      <p class="server-card__desc">اتاق‌های اختصاصی گیم، گفتگوی صوتی بدون تاخیر و مدیریتی حاضر شبانه‌روزی. کلیک کنید تا مستقیم به سرور متصل شوید.</p>
+      <ul class="server-card__stats">
+        <li><span class="dot dot--live"></span> آنلاین اکنون</li>
+        <li>کیفیت صدای بالا</li>
+        <li>پینگ پایدار</li>
+      </ul>
+      <a href="ts3server://PersianGuards.ir" class="btn btn--primary btn--full" id="tsCardBtn">
+        <span class="btn__glow"></span>
+        <span class="btn__text"><strong>باز کردن TeamSpeak و اتصال</strong></span>
+      </a>
+      <p class="server-card__hint">اگر برنامه‌ی تیم‌اسپیک نصب نیست، ابتدا آن را از سایت رسمی دریافت کنید.</p>
+    </article>
+
+    <!-- Discord — Secondary -->
+    <article class="server-card reveal">
+      <svg class="server-card__icon server-card__icon--discord" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 5.3A17.5 17.5 0 0 0 15.9 4l-.2.4c1.7.5 2.6 1.1 3.6 1.9-1.6-.8-3.1-1.3-4.6-1.5-1.4-.2-2.8-.2-4.2 0-1.5.2-3 .7-4.6 1.5 1-.8 2.1-1.4 3.9-1.9L9.6 4a17.4 17.4 0 0 0-4.4 1.3C2.6 9 1.9 12.6 2.2 16.1a17.7 17.7 0 0 0 5.4 2.7l.7-1.2c-.8-.3-1.5-.6-2.2-1.1.2.1.4.3.6.4 3 1.6 6.4 1.6 9.4 0l.6-.4c-.7.4-1.4.8-2.2 1.1l.7 1.2c1.9-.6 3.8-1.5 5.4-2.7.4-4.1-.6-7.6-2.3-10.8ZM9 14c-.8 0-1.5-.8-1.5-1.7S8.2 10.6 9 10.6s1.5.8 1.5 1.7S9.8 14 9 14Zm6 0c-.8 0-1.5-.8-1.5-1.7s.7-1.7 1.5-1.7 1.5.8 1.5 1.7-.7 1.7-1.5 1.7Z"/></svg>
+      <h3>دیسکورد PersianGuards</h3>
+      <p class="server-card__addr">discord.gg/5uGH7yHP3v</p>
+      <p class="server-card__desc">برای اطلاعیه‌ها، گفتگوی متنی و هماهنگی رویدادها به سرور دیسکورد ما بپیوندید.</p>
+      <a href="https://discord.gg/5uGH7yHP3v" target="_blank" rel="noopener" class="btn btn--secondary btn--full">
+        <span class="btn__text"><strong>پیوستن به دیسکورد</strong></span>
+      </a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ================= FEATURES ================= -->
+<section id="features" class="features">
+  <p class="eyebrow reveal center">امکانات</p>
+  <h2 class="section-title reveal center">چرا PersianGuards</h2>
+
+  <div class="features__grid">
+    <div class="feature reveal">
+      <svg viewBox="0 0 48 48" class="feature__icon"><path d="M24 4c8 6 8 6 16 6v14c0 12-8 18-16 20-8-2-16-8-16-20V10c8 0 8 0 16-6Z" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <h3>امنیت و نظم</h3>
+      <p>مدیریت فعال و قوانین شفاف برای فضایی امن و محترمانه</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 48 48" class="feature__icon"><rect x="8" y="14" width="32" height="24" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 20h32" stroke="currentColor" stroke-width="2"/></svg>
+      <h3>اتاق‌های اختصاصی</h3>
+      <p>کانال‌های جداگانه برای هر بازی و هر گروه دوستانه</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 48 48" class="feature__icon"><path d="M24 4v40M8 20l16-16 16 16M8 28l16 16 16-16" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <h3>رویدادهای دوره‌ای</h3>
+      <p>تورنمنت‌ها و شب‌های بازی مشترک با جوایز داخلی</p>
+    </div>
+    <div class="feature reveal">
+      <svg viewBox="0 0 48 48" class="feature__icon"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 14v10l7 7" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      <h3>پشتیبانی ۲۴ ساعته</h3>
+      <p>تیم مدیریت همیشه در دسترس اعضا</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="final-cta">
+  <div class="final-cta__pattern" aria-hidden="true"></div>
+  <h2 class="reveal">اکنون به جمع نگهبانان بپیوندید</h2>
+  <p class="reveal">درهای آپادانا برای شما باز است.</p>
+  <div class="final-cta__actions reveal">
+    <a href="ts3server://PersianGuards.ir" class="btn btn--primary btn--lg" id="tsFinalBtn">
+      <span class="btn__glow"></span>
+      <span class="btn__text"><strong>ورود به تیم‌اسپیک</strong><small>PersianGuards.ir</small></span>
+    </a>
+    <a href="https://discord.gg/5uGH7yHP3v" target="_blank" rel="noopener" class="btn btn--ghost btn--lg">
+      <span class="btn__text"><strong>دیسکورد</strong></span>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <svg class="footer__icon" viewBox="0 0 40 40"><use href="#faravahar-symbol"/></svg>
+      <span>Persian<em>Guards</em></span>
+    </div>
+    <p class="footer__tag">برخاسته از تخت جمشید، ساخته‌شده برای امروز</p>
+    <div class="footer__links">
+      <a href="ts3server://PersianGuards.ir">تیم‌اسپیک</a>
+      <span>·</span>
+      <a href="https://discord.gg/5uGH7yHP3v" target="_blank" rel="noopener">دیسکورد</a>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> PersianGuards — تمامی حقوق محفوظ است</p>
+  </div>
+</footer>
+
+<!-- TeamSpeak helper modal -->
+<div class="ts-modal" id="tsModal" aria-hidden="true">
+  <div class="ts-modal__backdrop" data-close></div>
+  <div class="ts-modal__box">
+    <button class="ts-modal__close" data-close aria-label="بستن">×</button>
+    <svg class="ts-modal__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5Zm7 8a1 1 0 0 0-2 0 5 5 0 0 1-10 0 1 1 0 0 0-2 0 7 7 0 0 0 6 6.92V19H9a1 1 0 0 0 0 2h6a1 1 0 0 0 0-2h-2v-2.08A7 7 0 0 0 19 10Z"/></svg>
+    <h3>در حال اتصال به تیم‌اسپیک...</h3>
+    <p>اگر برنامه‌ی TeamSpeak باز نشد، مطمئن شوید که آن را نصب کرده‌اید یا از دکمه‌ی زیر دانلود کنید.</p>
+    <p class="ts-modal__addr">آدرس سرور: <strong>PersianGuards.ir</strong></p>
+    <div class="ts-modal__actions">
+      <a href="ts3server://PersianGuards.ir" class="btn btn--primary">تلاش دوباره برای اتصال</a>
+      <a href="https://www.teamspeak.com/en/downloads/" target="_blank" rel="noopener" class="btn btn--ghost">دانلود TeamSpeak</a>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
